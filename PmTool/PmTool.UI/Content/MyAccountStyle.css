@@ -1,0 +1,11 @@
+﻿body {
+}
+
+#MyAccountContainer {
+    max-width: 600px;
+    margin-top: 60px;
+}
+
+#CuadrosTxt {
+    width: 200px;
+}

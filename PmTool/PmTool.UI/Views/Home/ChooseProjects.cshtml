@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewBag.Title = "ChooseProjects";
+}
+
+<h2>What kind of project you want to create?</h2>
+<div class="jumbotron">
+
+    <form>
+        <div class="container">
+            <div>
+                <input type="button" name="GoCreatelabProjectButton" class="btn btn-primary btn-lg" value="Lab project" onclick="location.href='@Url.Action("CreateLabProject","Lab")'" />
+            </div>
+            <br />
+            <div>
+                <input type="button" name="GoCreateDataCenterProjectButton" class="btn btn-primary btn-lg" value="Data center project" onclick="location.href='@Url.Action("CreateDataCenterProject","DataCenter")'" />
+            </div>
+            <br />
+            <div>
+                <input type="button" name="GoCreateFactoryProjectButton" class="btn btn-primary btn-lg" value="Factory project" onclick="location.href='@Url.Action("CreateFactoryProject","Factory")'" />
+            </div>
+            <br />
+            <div>
+                <input type="button" name="GoCreateOfficeProjectButton" class="btn btn-primary btn-lg" value="Office project" onclick="location.href='@Url.Action("CreateOfficeProject","Office")'" />
+            </div>
+            <br />
+            <div>
+                <input type="button" name="GoCreateOtherProjectButton" class="btn btn-primary btn-lg" value="Other project" onclick="location.href='@Url.Action("CreateOtherProject","OtherProject")'" />
+            </div>
+        </div>
+    </form>
+</div>

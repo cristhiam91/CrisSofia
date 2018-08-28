@@ -1,0 +1,79 @@
+﻿@model PmTool.UI.Models.Users
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UserLogin</title>
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <link href="~/Content/loginBStyle.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+    <script src="~/Scripts/loginBScrip.js"></script>
+
+
+
+</head>
+<body>
+    <div class="container" id="createContainer">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="panel panel-login">
+                    <div class="panel-heading">
+                        <div class="row">
+                            <div class="col-xs-22">
+                                <a href="#" class="active" id="login-form-link">Login</a>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                    <div class="panel-body" id="thePanel">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <form id="login-form" method="post" role="form" style="display: block;">
+                                    <div class="form-group">
+                                        @Html.Label("Id", htmlAttributes: new { @class = "control-label col-md-4" })
+                                        @Html.TextBoxFor(model => model.User_id, new { htmlAttributes = new { style = "width:250px" } })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.Label("Password", htmlAttributes: new { @class = "control-label col-md-4" })
+                                        @Html.PasswordFor(model => model.User_password, new { htmlAttributes = new { style = "width:250px" }})
+                                    </div>
+                                    <div class="form-group text-center">
+                                        <input type="checkbox" tabindex="3" class="" name="remember" id="remember">
+                                        <label for="remember"> Remember Me</label>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-sm-6 col-sm-offset-3">
+                                                <input type="submit" name="login-submit" id="login-submit" tabindex="4" class="form-control btn btn-success" value="Log In" onclick="location.href='@Url.Action("UserLogin","User")'" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="text-center">
+                                                    <a href="" tabindex="5" class="forgot-password">Forgot Password?</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> 
+</body>
+</html>

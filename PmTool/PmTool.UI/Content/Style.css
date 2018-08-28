@@ -1,0 +1,55 @@
+﻿body {
+    padding-top: 100px;
+    min-height: 100vh;
+    background-image: url("../../Images/construction_plans.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+
+#myModal {
+  
+}
+
+#carouselExampleIndicators {
+    width: 500px;
+    height: 300px;
+    position: relative;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+#myCarousel {
+    width: 1000px;
+    height: 300px;
+    position: relative;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+#test {
+    width: 1000px;
+    height: 300px;
+    position: absolute;
+    margin: auto;
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+
+#theContainer {
+    margin-top: 20px;
+    text-align: center;
+}
+
+#formButtonsFirstPage {
+    display: inline-block;
+}

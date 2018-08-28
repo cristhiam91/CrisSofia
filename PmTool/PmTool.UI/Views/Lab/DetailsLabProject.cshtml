@@ -1,0 +1,210 @@
+﻿@model PmTool.UI.Models.Labs
+
+@{
+    ViewBag.Title = "DetailsLabProject";
+}
+
+<h2>DetailsLabProject</h2>
+
+<div>
+    <h4>Labs</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Lab_request_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lab_request_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lab_requestor_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lab_requestor_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Assigned_pm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Assigned_pm)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Site_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Site_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Program_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Program_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project_phase)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project_phase)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Request_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Request_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Expected_date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Expected_date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project_budget)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project_budget)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project_type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project_type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Lab_name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Lab_name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Scope)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Scope)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Square_footage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Square_footage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_number_racks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_number_racks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_number_ports_per_rack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_number_ports_per_rack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_number_copper_ports_per_racks)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_number_copper_ports_per_racks)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_number_fiber_ports_per_rack)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_number_fiber_ports_per_rack)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_number_benches)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_number_benches)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_number_ports_per_bench)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_number_ports_per_bench)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_number_copper_ports_per_bench)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_number_copper_ports_per_bench)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Total_number_fiber_ports_per_bench)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Total_number_fiber_ports_per_bench)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Speed_connection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Speed_connection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project_description)
+        </dd>
+
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back", "Index")
+</div>

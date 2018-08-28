@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PmTool.DATA", "PmTool.DATA\PmTool.DATA.csproj", "{92DB4761-371A-4C33-97A2-2BD6CF011D67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PmTool.DAL", "PmTool.DAL\PmTool.DAL.csproj", "{C2D8A59B-DCDE-4546-A20F-AE1CA8888E5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PmTool.UI", "PmTool.UI\PmTool.UI.csproj", "{D77963A3-1A69-4ECA-A63D-79CDB527F5FB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{92DB4761-371A-4C33-97A2-2BD6CF011D67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92DB4761-371A-4C33-97A2-2BD6CF011D67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92DB4761-371A-4C33-97A2-2BD6CF011D67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92DB4761-371A-4C33-97A2-2BD6CF011D67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C2D8A59B-DCDE-4546-A20F-AE1CA8888E5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2D8A59B-DCDE-4546-A20F-AE1CA8888E5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2D8A59B-DCDE-4546-A20F-AE1CA8888E5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2D8A59B-DCDE-4546-A20F-AE1CA8888E5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D77963A3-1A69-4ECA-A63D-79CDB527F5FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D77963A3-1A69-4ECA-A63D-79CDB527F5FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D77963A3-1A69-4ECA-A63D-79CDB527F5FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D77963A3-1A69-4ECA-A63D-79CDB527F5FB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EE5F29B8-845A-43B3-9741-901675006F67}
+	EndGlobalSection
+EndGlobal

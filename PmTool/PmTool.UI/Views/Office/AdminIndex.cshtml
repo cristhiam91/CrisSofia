@@ -1,0 +1,183 @@
+﻿@model IEnumerable<PmTool.UI.Models.Offices>
+
+@{
+    ViewBag.Title = "AdminIndex";
+}
+
+<h2>AdminIndex</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Office_request_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Office_requestor_id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Assigned_pm)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Site_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Program_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project_name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project_phase)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Request_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Expected_date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project_budget)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project_type)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_number_workstations)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_number_ports_per_workstation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Speed_connection)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_number_workstation_copper_ports)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Total_number_workstation_fiber_ports)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number_of_auditoriums)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number_of_A_type_rooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number_of_B_type_rooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number_of_C_type_rooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number_of_Collaboration_rooms)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Number_of_phonebooths)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Square_footage)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Project_description)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Scope)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Connection)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Office_request_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Office_requestor_id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Assigned_pm)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Site_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Program_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project_name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project_phase)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Request_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Expected_date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project_budget)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project_type)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total_number_workstations)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total_number_ports_per_workstation)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Speed_connection)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total_number_workstation_copper_ports)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Total_number_workstation_fiber_ports)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number_of_auditoriums)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number_of_A_type_rooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number_of_B_type_rooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number_of_C_type_rooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number_of_Collaboration_rooms)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Number_of_phonebooths)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Square_footage)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Project_description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Scope)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Connection)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

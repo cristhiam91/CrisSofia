@@ -1,0 +1,171 @@
+﻿@model IEnumerable<PmTool.UI.Models.Factories>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<div class="table-responsive">
+    <p>
+        @Html.ActionLink("Create New", "CreateFactoryProject")
+    </p>
+    <table class="table table-bordered table-responsive table-hover table-condensed">
+
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Factory_request_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factory_requestor_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Assigned_pm)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Site_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Program_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project_phase)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Request_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Expected_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project_budget)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Factory_name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_number_bays)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_number_ports_per_bay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_number_copper_ports_per_bay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_number_fiber_ports_per_bay)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speed_connection)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fab_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Square_footage)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Project_description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Scope)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Factory_request_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Factory_requestor_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Assigned_pm)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Site_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Program_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project_phase)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Request_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Expected_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project_budget)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Factory_name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_number_bays)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_number_ports_per_bay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_number_copper_ports_per_bay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_number_fiber_ports_per_bay)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Speed_connection)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fab_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Square_footage)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Project_description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Scope)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditFactoryProject", new { id = item.Factory_request_id }) |
+                    @Html.ActionLink("Details", "DetailsFactoryProject", new { id = item.Factory_request_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Factory_request_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    @{int x = (Int32)Session["UserType"]; }
+
+    @if (x == 3)
+    {
+        <div>
+            @Html.ActionLink("Back", "AdminConsole", "User")
+        </div>
+    }
+    else
+    {
+        <div>
+            @Html.ActionLink("Back", "PmManagerConsole", "User")
+        </div>
+    }
+</div>

@@ -1,0 +1,15 @@
+﻿body {
+}
+
+#ProjectsContainer {
+    margin: 5%;
+}
+
+#PmManagerMenu {
+    height: 550px;
+    width: 200px;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    margin-top: 160px;
+}

@@ -1,0 +1,251 @@
+﻿@model PmTool.UI.Models.MyPMProjects
+@{
+    ViewBag.Title = "My PM Projects";
+}
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PmProjects</title>
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/ProjectStyles.css"/>
+</head>
+<body>
+    <div>
+        <div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Log Off", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("My Account", "MyAccount", "User", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container" id="ProjectsContainer">
+
+        <div class="container" id="PmLab">
+            @if (Model.Labs.Count == 0)
+            {
+
+            }
+            else
+            {
+                <h2>Labs</h2>
+                <table class="table table-bordered table-responsive table-hover">
+                    <tr>
+                        <th>
+                            <p>Id del Labs</p>
+                        </th>
+                        <th>
+                            <p>Nombre del Labs</p>
+                        </th>
+                        <th>
+                            <p>Descripcion del Labs</p>
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.Labs)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Lab_request_id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Project_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Project_description)
+                            </td>
+                            <td>
+                                <input type="button" name="GoEditlabProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditLabProject","Lab",  new { id = item.Lab_request_id })'" /> |
+                                <input type="button" name="GoDetaillabProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsLabProject","Lab",  new { id = item.Lab_request_id })'" /> |
+                                <input type="button" name="GoDeletelabProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("EditFactoryProject","Lab",  new { id = item.Lab_request_id})'" />
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+        </div>
+        <div class="container" id="PmFactory">
+            @if (Model.Factories.Count == 0)
+            {
+
+            }
+            else
+            {
+                <h2>Factory</h2>
+                <table class="table table-bordered table-responsive table-hover">
+                    <tr>
+                        <th>
+                            <p>Id del Factory</p>
+                        </th>
+                        <th>
+                            <p>Nombre del Factory</p>
+                        </th>
+                        <th>
+                            <p>Descripcion del Factory</p>
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.Factories)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Factory_request_id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Project_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Project_description)
+                            </td>
+                            <td>
+                                <input type="button" name="GoEditFactoriesProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditFactoryProject","Factory",  new { id = item.Factory_request_id })'" /> |
+                                <input type="button" name="GoDetailFactoriesProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsFactoryProject","Factory",  new { id = item.Factory_request_id })'" /> |
+                                <input type="button" name="GoDeleteFactoriesProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("EditFactoryProject","Factory",  new { id = item.Factory_request_id })'" />
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+        </div>
+        <div class="container" id="PmDataCenter">
+            @if (Model.DataCenters.Count == 0)
+            {
+
+            }
+            else
+            {
+                <h2>Data Center</h2>
+                <table class="table table-bordered table-responsive table-hover">
+                    <tr>
+                        <th>
+                            <p>Id del Data Center</p>
+                        </th>
+                        <th>
+                            <p>Nombre del Data Center</p>
+                        </th>
+                        <th>
+                            <p>Descripcion del Data Center</p>
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.DataCenters)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DataCenter_request_id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Project_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Project_description)
+                            </td>
+                            <td>
+                                <input type="button" name="GoEditDataCentersProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditLabProject", "Lab", new { id = item.DataCenter_request_id })'" /> |
+                                <input type="button" name="GoDetailDataCentersProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsLabProject", "Lab", new { id = item.DataCenter_request_id })'" /> |
+                                <input type="button" name="GoDeleteDataCentersProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("EditFactoryProject", "Lab", new { id = item.DataCenter_request_id })'" />
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+        </div>
+        <div class="container" id="PmOffice">
+            @if (Model.Offices.Count == 0)
+            {
+
+            }
+            else
+            {
+                <h2>Office</h2>
+                <table class="table table-bordered table-responsive table-hover">
+                    <tr>
+                        <th>
+                            <p>Id del Office</p>
+                        </th>
+                        <th>
+                            <p>Nombre del Office</p>
+                        </th>
+                        <th>
+                            <p>Descripcion del Office</p>
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.Offices)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Office_request_id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Project_name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Project_description)
+                            </td>
+                            <td>
+                                <input type="button" name="GoEditOfficesProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditOfficeProject", "Lab", new { id = item.Office_request_id })'" /> |
+                                <input type="button" name="GoDetailOfficesProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsOfficeProject", "Lab", new { id = item.Office_request_id })'" /> |
+                                <input type="button" name="GoDeleteOfficesProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("EditOtherProject", "Lab", new { id = item.Office_request_id })'" />
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+        </div>
+        <div class="container" id="PmOtherProject">
+            @if (Model.OtherProjects.Count == 0)
+            {
+
+            }
+            else
+            {
+                <h2>Other Project</h2>
+                <table class="table table-bordered table-responsive table-hover">
+                    <tr>
+                        <th>
+                            <p>Id del Other Projec</p>
+                        </th>
+                        <th>
+                            <p>Descripcion del Other Projec</p>
+                        </th>
+                        <th></th>
+                    </tr>
+                    @foreach (var item in Model.OtherProjects)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Other_request_id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Project_description)
+                            </td>
+                            <td>
+                                <input type="button" name="GoEditOtherProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditOtherProject", "Lab", new { id = item.Other_request_id })'" /> |
+                                <input type="button" name="GoDetailOtherProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsOtherProject", "Lab", new { id = item.Other_request_id })'" /> |
+                                <input type="button" name="GoDeleteOtherProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("EditOtherProject", "Lab", new { id = item.Other_request_id })'" />
+                            </td>
+                        </tr>
+                    }
+                </table>
+            }
+        </div>
+    </div>
+</body>
+</html>

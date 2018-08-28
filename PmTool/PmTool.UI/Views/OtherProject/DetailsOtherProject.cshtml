@@ -1,0 +1,58 @@
+﻿@model PmTool.UI.Models.OtherProjects
+
+@{
+    ViewBag.Title = "DetailsOtherProject";
+}
+
+<h2>DetailsOtherProject</h2>
+
+<div>
+    <h4>OtherProjects</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Other_request_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other_request_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Project_description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Project_description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other_requestor_id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other_requestor_id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Other_projectType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Other_projectType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Assigned_pm)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Assigned_pm)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back", "Index")
+</p>
