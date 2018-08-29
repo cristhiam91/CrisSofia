@@ -199,6 +199,7 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Charts.css" />
     <Content Include="Content\login.css" />
     <Content Include="Content\loginBStyle.css" />
     <Content Include="Content\MyAccountStyle.css" />
@@ -216,6 +217,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Chart.js" />
+    <Content Include="Scripts\Chart.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
@@ -261,7 +264,6 @@
     <Content Include="Views\Home\IndexTest.cshtml" />
     <Content Include="Views\User\UserLogin.cshtml" />
     <Content Include="Views\User\CreateMyAccount.cshtml" />
-    <Content Include="Views\User\MyAccount.cshtml" />
     <Content Include="Views\User\AdminConsole.cshtml" />
     <Content Include="Views\DataCenter\AssignLabProject.cshtml" />
     <Content Include="Views\DataCenter\DetailsDataCenterProject.cshtml" />
@@ -289,6 +291,11 @@
     <Content Include="Views\Lab\AdminIndex.cshtml" />
     <Content Include="Views\Office\AdminIndex.cshtml" />
     <Content Include="Views\OtherProject\AdminIndex.cshtml" />
+    <Content Include="Views\Lab\LabsData.cshtml" />
+    <Content Include="Views\Office\OfficeData.cshtml" />
+    <Content Include="Views\Factory\FactoryData.cshtml" />
+    <Content Include="Views\DataCenter\DataCentersData.cshtml" />
+    <Content Include="Views\User\MyAccount.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
