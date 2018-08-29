@@ -64,6 +64,25 @@ namespace PmTool.UI.Controllers
             var usersToShow = Mapper.Map<Models.Users>(usertoSearch);
             return View(usersToShow);
         }
+        [HttpPost]
+        public ActionResult MyAccount(Users users)
+        {
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    return View();
+                }
+                var editMyAccout = Mapper.Map<DATA.Users>(user);
+                user.EditUser(editMyAccout);
+                return RedirectToAction("MyAccount");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public ActionResult UserProfileManagement()
         {

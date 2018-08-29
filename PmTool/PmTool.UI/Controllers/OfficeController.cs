@@ -175,5 +175,25 @@ namespace PmTool.UI.Controllers
                 return View();
             }
         }
+
+        public ActionResult OfficeData()
+        {
+            List<Double> ListProjectsCost = new List<double>();
+            List<string> LabNames = new List<string>();
+            var listProjects = off.ListOfficeProjects();
+            var listOfProjectsShow = Mapper.Map<List<Models.Offices>>(listProjects);
+            var cost = listProjects.Select(x => x.Project_budget).Distinct();
+
+            foreach (var item in cost)
+            {
+                ListProjectsCost.Add(listProjects.Count(x => x.Project_budget == item));
+
+            }
+
+            var rep = ListProjectsCost;
+            ViewBag.BUDGET = cost;
+            ViewBag.REP = ListProjectsCost.ToList();
+            return View();
+        }
     }
 }
