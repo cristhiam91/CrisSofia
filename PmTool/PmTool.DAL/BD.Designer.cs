@@ -26,8 +26,8 @@ namespace PmTool.DAL {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-580VVCI\\CRISSQL;Initial Catalog=PmTool;Integrated Security=Tr" +
-            "ue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-580VVCI;Initial Catalog=ProjectManagement;Integrated Security" +
+            "=True")]
         public string conexion {
             get {
                 return ((string)(this["conexion"]));
