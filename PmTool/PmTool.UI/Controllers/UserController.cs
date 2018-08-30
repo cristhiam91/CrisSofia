@@ -73,7 +73,7 @@ namespace PmTool.UI.Controllers
                 {
                     return View();
                 }
-                var editMyAccout = Mapper.Map<DATA.Users>(user);
+                var editMyAccout = Mapper.Map<DATA.Users>(users);
                 user.EditUser(editMyAccout);
                 return RedirectToAction("MyAccount");
             }
@@ -235,7 +235,7 @@ namespace PmTool.UI.Controllers
                 {
                     return View();
                 }
-                var userToEdit = Mapper.Map<DATA.Users>(user);
+                var userToEdit = Mapper.Map<DATA.Users>(users);
                 user.EditUser(userToEdit);
                 return RedirectToAction("UserProfileManagement");
             }
