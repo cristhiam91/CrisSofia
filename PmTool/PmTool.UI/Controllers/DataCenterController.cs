@@ -93,8 +93,21 @@ namespace PmTool.UI.Controllers
 
                         var dcToAdd = Mapper.Map<DATA.DataCenters>(dataCenters);
                         dc.AddDataCenter(dcToAdd);
-                        return RedirectToAction("CreateDataCenterProject");
+                    int x = (Int32)Session["UserType"];
+                    switch (x)
+                    {
+                        case 1:
+                            return RedirectToAction("PmProjects", "User");
+                        case 2:
+                            return RedirectToAction("UserMyProjects", "User");
+                        case 3:
+                            return RedirectToAction("Index", "DataCenter");
+                        case 4:
+                            return RedirectToAction("Index", "DataCenter");
+                        default:
+                            return RedirectToAction("Index", "Home");
                     }
+                }
                     catch (Exception ex)
                     {
 
@@ -125,7 +138,22 @@ namespace PmTool.UI.Controllers
                 }
                 var updateDataCenterProject = Mapper.Map<DATA.DataCenters>(datac);
                 dc.UpdateDataCenterProject(updateDataCenterProject);
-                return RedirectToAction("Index", "Home");
+                //return RedirectToAction("Index", "Home");
+                int x = (Int32)Session["UserType"];
+                switch (x)
+                {
+                    case 1:
+                        return RedirectToAction("PmProjects", "User");
+                    case 2:
+                        return RedirectToAction("UserMyProjects", "User");
+                    case 3:
+                        return RedirectToAction("Index", "DataCenter");
+                    case 4:
+                        return RedirectToAction("Index", "DataCenter");
+                    default:
+                        return RedirectToAction("Index", "Home");
+                }
+
             }
             catch
             {
@@ -135,7 +163,20 @@ namespace PmTool.UI.Controllers
         public ActionResult Delete(int id)
         {
             dc.DeleteDataCenterProject(id);
-            return View();
+            int x = (Int32)Session["UserType"];
+            switch (x)
+            {
+                case 1:
+                    return RedirectToAction("PmProjects", "User");
+                case 2:
+                    return RedirectToAction("UserMyProjects", "User");
+                case 3:
+                    return RedirectToAction("Index", "DataCenter");
+                case 4:
+                    return RedirectToAction("Index", "DataCenter");
+                default:
+                    return RedirectToAction("Index", "Home");
+            }
         }
 
         public ActionResult DetailsDataCenterProject(int id)
@@ -143,49 +184,24 @@ namespace PmTool.UI.Controllers
             var datac = dc.SearchDataCenterProject(id);
             var datacShow = Mapper.Map<Models.DataCenters>(datac);
             return View(datacShow);
-        }
-        public ActionResult AssignLabProject(int id)
-        {
-            var datac = dc.SearchDataCenterProject(id);
-            var datacShow = Mapper.Map<Models.DataCenters>(datac);
-            return View(datacShow);
-        }
-        [HttpPost]
-        public ActionResult AssignLabProject(DataCenters datac)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return View();
-                }
-                var updateDataCenterProject = Mapper.Map<DATA.DataCenters>(datac);
-                dc.UpdateDataCenterProject(updateDataCenterProject);
-                return RedirectToAction("Index", "Home");
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        }  
 
         public ActionResult DataCentersData()
         {
-            List<Double> ListProjectsCost = new List<double>();
-            List<string> LabNames = new List<string>();
-            var listProjects = dc.ListDataCenters();
-            var listOfProjectsShow = Mapper.Map<List<Models.DataCenters>>(listProjects);
-            var cost = listProjects.Select(x => x.Project_budget).Distinct();
+            List<Double> ListDataCenterProjectsCost = new List<double>();
+            var listDataCenterProjects = dc.ListDataCenters();
+            var listOfDataCentersProjectsShow = Mapper.Map<List<Models.DataCenters>>(listDataCenterProjects);
+            var cost = listDataCenterProjects.Select(x => x.Project_budget).Distinct();
 
             foreach (var item in cost)
             {
-                ListProjectsCost.Add(listProjects.Count(x => x.Project_budget == item));
+                ListDataCenterProjectsCost.Add(listDataCenterProjects.Count(x => x.Project_budget == item));
 
             }
 
-            var rep = ListProjectsCost;
+            var rep = ListDataCenterProjectsCost;
             ViewBag.BUDGET = cost;
-            ViewBag.REP = ListProjectsCost.ToList();
+            ViewBag.REP = ListDataCenterProjectsCost.ToList();
             return View();
         }
     }

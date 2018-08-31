@@ -100,7 +100,20 @@ namespace PmTool.UI.Controllers
 
                     var fabToAdd = Mapper.Map<DATA.Factories>(factory);
                     fac.AddFactory(fabToAdd);
-                    return RedirectToAction("CreateFactoryProject");
+                    int x = (Int32)Session["UserType"];
+                    switch (x)
+                    {
+                        case 1:
+                            return RedirectToAction("PmProjects", "User");
+                        case 2:
+                            return RedirectToAction("UserMyProjects", "User");
+                        case 3:
+                            return RedirectToAction("Index", "Factory");
+                        case 4:
+                            return RedirectToAction("Index", "Factory");
+                        default:
+                            return RedirectToAction("Index", "Home");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -133,7 +146,20 @@ namespace PmTool.UI.Controllers
                 }
                 var updateFactoryProject = Mapper.Map<DATA.Factories>(factory);
                 fac.UpdateFactoryProject(updateFactoryProject);
-                return RedirectToAction("Index", "Home");
+                int x = (Int32)Session["UserType"];
+                switch (x)
+                {
+                    case 1:
+                        return RedirectToAction("PmProjects", "User");
+                    case 2:
+                        return RedirectToAction("UserMyProjects", "User");
+                    case 3:
+                        return RedirectToAction("Index", "Factory");
+                    case 4:
+                        return RedirectToAction("Index", "Factory");
+                    default:
+                        return RedirectToAction("Index", "Home");
+                }
             }
             catch
             {
@@ -143,7 +169,20 @@ namespace PmTool.UI.Controllers
         public ActionResult Delete(int id)
         {
             fac.DeleteFactoryProject(id);
-            return View();
+            int x = (Int32)Session["UserType"];
+            switch (x)
+            {
+                case 1:
+                    return RedirectToAction("PmProjects", "User");
+                case 2:
+                    return RedirectToAction("UserMyProjects", "User");
+                case 3:
+                    return RedirectToAction("Index", "Factory");
+                case 4:
+                    return RedirectToAction("Index", "Factory");
+                default:
+                    return RedirectToAction("Index", "Home");
+            }
         }
 
         public ActionResult DetailsFactoryProject(int id)
@@ -151,30 +190,6 @@ namespace PmTool.UI.Controllers
             var factory = fac.SearchFactoryProject(id);
             var factoryShow = Mapper.Map<Models.Factories>(factory);
             return View(factoryShow);
-        }
-        public ActionResult AssignFactoryProject(int id)
-        {
-            var factory = fac.SearchFactoryProject(id);
-            var factoryShow = Mapper.Map<Models.Factories>(factory);
-            return View(factoryShow);
-        }
-        [HttpPost]
-        public ActionResult AssignFactoryProject(Factories factory)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return View();
-                }
-                var updateFactoryProject = Mapper.Map<DATA.Factories>(factory);
-                fac.UpdateFactoryProject(updateFactoryProject);
-                return RedirectToAction("Index", "Home");
-            }
-            catch
-            {
-                return View();
-            }
         }
 
         public ActionResult FactoryData()

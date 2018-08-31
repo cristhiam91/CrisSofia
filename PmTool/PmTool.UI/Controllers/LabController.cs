@@ -110,7 +110,20 @@ namespace PmTool.UI.Controllers
 
                     var labToAdd = Mapper.Map<DATA.Labs>(laboratory);
                     lab.AddLabs(labToAdd);
-                    return RedirectToAction("CreateLabProject");
+                    int x = (Int32)Session["UserType"];
+                    switch (x)
+                    {
+                        case 1:
+                            return RedirectToAction("PmProjects", "User");
+                        case 2:
+                            return RedirectToAction("UserMyProjects", "User");
+                        case 3:
+                            return RedirectToAction("Index", "Lab");
+                        case 4:
+                            return RedirectToAction("Index", "Lab");
+                        default:
+                            return RedirectToAction("Index", "Home");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -143,7 +156,20 @@ namespace PmTool.UI.Controllers
                 int userType=(Int32)Session["UserType"];
                 var updateLabProject = Mapper.Map<DATA.Labs>(labs);
                 lab.UpdateLabProject(updateLabProject);
-                return RedirectToAction("Index", "Home");
+                int x = (Int32)Session["UserType"];
+                switch (x)
+                {
+                    case 1:
+                        return RedirectToAction("PmProjects", "User");
+                    case 2:
+                        return RedirectToAction("UserMyProjects", "User");
+                    case 3:
+                        return RedirectToAction("Index", "Lab");
+                    case 4:
+                        return RedirectToAction("Index", "Lab");
+                    default:
+                        return RedirectToAction("Index", "Home");
+                }
             }
             catch
             {
@@ -153,7 +179,20 @@ namespace PmTool.UI.Controllers
         public ActionResult Delete(int id)
         {
             lab.DeleteLabProject(id);
-            return View();
+            int x = (Int32)Session["UserType"];
+            switch (x)
+            {
+                case 1:
+                    return RedirectToAction("PmProjects", "User");
+                case 2:
+                    return RedirectToAction("UserMyProjects", "User");
+                case 3:
+                    return RedirectToAction("Index", "Lab");
+                case 4:
+                    return RedirectToAction("Index", "Lab");
+                default:
+                    return RedirectToAction("Index", "Home");
+            }
         }
 
         public ActionResult DetailsLabProject(int id)
@@ -163,35 +202,10 @@ namespace PmTool.UI.Controllers
             return View(labsShow);
         }
 
-        public ActionResult AssignLabProject(int id)
-        {
-            var labs = lab.SearchLabProject(id);
-            var labsShow = Mapper.Map<Models.Labs>(labs);
-            return View(labsShow);
-        }
-        [HttpPost]
-        public ActionResult AssignLabProject(Labs labs)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return View();
-                }
-                var updateLabProject = Mapper.Map<DATA.Labs>(labs);
-                lab.UpdateLabProject(updateLabProject);
-                return RedirectToAction("Index", "Home");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
         public ActionResult LabsData()
         {
+
             List<Double> ListProjectsCost = new List<double>();
-            List<string> LabNames = new List<string>();
             var listProjects = lab.ListLabs();
             var listOfProjectsShow = Mapper.Map<List<Models.Labs>>(listProjects);
             var cost = listProjects.Select(x => x.Project_budget).Distinct();
@@ -199,13 +213,14 @@ namespace PmTool.UI.Controllers
             foreach (var item in cost)
             {
                 ListProjectsCost.Add(listProjects.Count(x => x.Project_budget == item));
-          
+
             }
 
             var rep = ListProjectsCost;
             ViewBag.BUDGET = cost;
             ViewBag.REP = ListProjectsCost.ToList();
             return View();
+
         }
 
 

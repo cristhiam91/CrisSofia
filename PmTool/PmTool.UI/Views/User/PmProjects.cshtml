@@ -73,7 +73,7 @@
                             <td>
                                 <input type="button" name="GoEditlabProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditLabProject","Lab",  new { id = item.Lab_request_id })'" /> |
                                 <input type="button" name="GoDetaillabProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsLabProject","Lab",  new { id = item.Lab_request_id })'" /> |
-                                <input type="button" name="GoDeletelabProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("EditFactoryProject","Lab",  new { id = item.Lab_request_id})'" />
+                                <input type="button" name="GoDeletelabProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("Delete","Lab",  new { id = item.Lab_request_id})'" />
                             </td>
                         </tr>
                     }
@@ -116,7 +116,7 @@
                             <td>
                                 <input type="button" name="GoEditFactoriesProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditFactoryProject","Factory",  new { id = item.Factory_request_id })'" /> |
                                 <input type="button" name="GoDetailFactoriesProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsFactoryProject","Factory",  new { id = item.Factory_request_id })'" /> |
-                                <input type="button" name="GoDeleteFactoriesProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("EditFactoryProject","Factory",  new { id = item.Factory_request_id })'" />
+                                <input type="button" name="GoDeleteFactoriesProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("Delete","Factory",  new { id = item.Factory_request_id })'" />
                             </td>
                         </tr>
                     }
@@ -157,9 +157,9 @@
                                 @Html.DisplayFor(modelItem => item.Project_description)
                             </td>
                             <td>
-                                <input type="button" name="GoEditDataCentersProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditLabProject", "Lab", new { id = item.DataCenter_request_id })'" /> |
-                                <input type="button" name="GoDetailDataCentersProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsLabProject", "Lab", new { id = item.DataCenter_request_id })'" /> |
-                                <input type="button" name="GoDeleteDataCentersProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("EditFactoryProject", "Lab", new { id = item.DataCenter_request_id })'" />
+                                <input type="button" name="GoEditDataCentersProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditDataCenterProject", "DataCenters", new { id = item.DataCenter_request_id })'" /> |
+                                <input type="button" name="GoDetailDataCentersProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsDataCenterProject", "DataCenters", new { id = item.DataCenter_request_id })'" /> |
+                                <input type="button" name="GoDeleteDataCentersProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("Delete", "DataCenters", new { id = item.DataCenter_request_id })'" />
                             </td>
                         </tr>
                     }
@@ -200,9 +200,9 @@
                                 @Html.DisplayFor(modelItem => item.Project_description)
                             </td>
                             <td>
-                                <input type="button" name="GoEditOfficesProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditOfficeProject", "Lab", new { id = item.Office_request_id })'" /> |
-                                <input type="button" name="GoDetailOfficesProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsOfficeProject", "Lab", new { id = item.Office_request_id })'" /> |
-                                <input type="button" name="GoDeleteOfficesProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("EditOtherProject", "Lab", new { id = item.Office_request_id })'" />
+                                <input type="button" name="GoEditOfficesProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditOfficeProject", "Office", new { id = item.Office_request_id })'" /> |
+                                <input type="button" name="GoDetailOfficesProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsOfficeProject", "Office", new { id = item.Office_request_id })'" /> |
+                                <input type="button" name="GoDeleteOfficesProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("Delete", "Office", new { id = item.Office_request_id })'" />
                             </td>
                         </tr>
                     }
@@ -237,9 +237,9 @@
                                 @Html.DisplayFor(modelItem => item.Project_description)
                             </td>
                             <td>
-                                <input type="button" name="GoEditOtherProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditOtherProject", "Lab", new { id = item.Other_request_id })'" /> |
-                                <input type="button" name="GoDetailOtherProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsOtherProject", "Lab", new { id = item.Other_request_id })'" /> |
-                                <input type="button" name="GoDeleteOtherProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("EditOtherProject", "Lab", new { id = item.Other_request_id })'" />
+                                <input type="button" name="GoEditOtherProjectButton" class="btn-link" value="Edit" onclick="location.href='@Url.Action("EditOtherProject", "OtherProject", new { id = item.Other_request_id })'" /> |
+                                <input type="button" name="GoDetailOtherProjectButton" class="btn-link" value="Details" onclick="location.href='@Url.Action("DetailsOtherProject", "OtherProject", new { id = item.Other_request_id })'" /> |
+                                <input type="button" name="GoDeleteOtherProjectButton" class="btn-link" value="Delete" onclick="location.href='@Url.Action("Delete", "OtherProject", new { id = item.Other_request_id })'" />
                             </td>
                         </tr>
                     }

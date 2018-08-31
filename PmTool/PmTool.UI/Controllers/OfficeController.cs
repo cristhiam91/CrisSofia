@@ -101,7 +101,20 @@ namespace PmTool.UI.Controllers
 
                     var officeToAdd = Mapper.Map<DATA.Offices>(office);
                     off.AddOfficeProject(officeToAdd);
-                    return RedirectToAction("CreateOfficeProject");
+                    int x = (Int32)Session["UserType"];
+                    switch (x)
+                    {
+                        case 1:
+                            return RedirectToAction("PmProjects", "User");
+                        case 2:
+                            return RedirectToAction("UserMyProjects", "User");
+                        case 3:
+                            return RedirectToAction("Index", "Office");
+                        case 4:
+                            return RedirectToAction("Index", "Office");
+                        default:
+                            return RedirectToAction("Index", "Home");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -132,7 +145,20 @@ namespace PmTool.UI.Controllers
                 }
                 var updateOfficeProject = Mapper.Map<DATA.Offices>(office);
                 off.UpdateOfficeProject(updateOfficeProject);
-                return RedirectToAction("Index", "Home");
+                int x = (Int32)Session["UserType"];
+                switch (x)
+                {
+                    case 1:
+                        return RedirectToAction("PmProjects", "User");
+                    case 2:
+                        return RedirectToAction("UserMyProjects", "User");
+                    case 3:
+                        return RedirectToAction("Index", "Office");
+                    case 4:
+                        return RedirectToAction("Index", "Office");
+                    default:
+                        return RedirectToAction("Index", "Home");
+                }
             }
             catch
             {
@@ -142,7 +168,20 @@ namespace PmTool.UI.Controllers
         public ActionResult Delete(int id)
         {
             off.DeleteOfficeProject(id);
-            return View();
+            int x = (Int32)Session["UserType"];
+            switch (x)
+            {
+                case 1:
+                    return RedirectToAction("PmProjects", "User");
+                case 2:
+                    return RedirectToAction("UserMyProjects", "User");
+                case 3:
+                    return RedirectToAction("Index", "Office");
+                case 4:
+                    return RedirectToAction("Index", "Office");
+                default:
+                    return RedirectToAction("Index", "Home");
+            }
         }
 
         public ActionResult DetailsOfficeProject(int id)
@@ -151,35 +190,10 @@ namespace PmTool.UI.Controllers
             var officeShow = Mapper.Map<Models.Offices>(office);
             return View(officeShow);
         }
-        public ActionResult AssignOfficeProject(int id)
-        {
-            var office = off.SearchOfficeProject(id);
-            var officeShow = Mapper.Map<Models.Offices>(office);
-            return View(officeShow);
-        }
-        [HttpPost]
-        public ActionResult AssignOfficeProject(Offices office)
-        {
-            try
-            {
-                if (!ModelState.IsValid)
-                {
-                    return View();
-                }
-                var updateOfficeProject = Mapper.Map<DATA.Offices>(office);
-                off.UpdateOfficeProject(updateOfficeProject);
-                return RedirectToAction("Index", "Home");
-            }
-            catch
-            {
-                return View();
-            }
-        }
 
         public ActionResult OfficeData()
         {
             List<Double> ListProjectsCost = new List<double>();
-            List<string> LabNames = new List<string>();
             var listProjects = off.ListOfficeProjects();
             var listOfProjectsShow = Mapper.Map<List<Models.Offices>>(listProjects);
             var cost = listProjects.Select(x => x.Project_budget).Distinct();

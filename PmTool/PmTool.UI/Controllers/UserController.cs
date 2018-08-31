@@ -60,6 +60,10 @@ namespace PmTool.UI.Controllers
         public ActionResult MyAccount()
         {
             int userId = (Int32)Session["TheUserID"];
+
+            var listUserTypes = uType.ListUserTypes();
+            ViewBag.listUserTypesDll = new SelectList(listUserTypes, "User_type_id", "User_type_name");
+
             var usertoSearch = user.SearchUser(userId);
             var usersToShow = Mapper.Map<Models.Users>(usertoSearch);
             return View(usersToShow);
@@ -67,6 +71,8 @@ namespace PmTool.UI.Controllers
         [HttpPost]
         public ActionResult MyAccount(Users users)
         {
+            var listUserTypes = uType.ListUserTypes();
+            ViewBag.listUserTypesDll = new SelectList(listUserTypes, "User_type_id", "User_type_name");
             try
             {
                 if (!ModelState.IsValid)

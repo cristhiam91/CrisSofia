@@ -221,6 +221,35 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back", "Index")
+    @{int x = (Int32)Session["UserType"];}
+
+    @if (x == 1)
+    {
+        <input type="button" name="GoMenutButton" class="btn-link" value="Home" onclick="location.href='@Url.Action("PmProjects","User")'" />
+
+    }
+    else
+    {
+        if (x == 2)
+        {
+            <input type="button" name="GoMenutButton" class="btn-link" value="Home" onclick="location.href='@Url.Action("UserMyProjects","User")'" />
+
+        }
+        else
+        {
+            if (x == 3)
+            {
+                <input type="button" name="GoMenutButton" class="btn-link" value="Home" onclick="location.href='@Url.Action("Index","Office")'" />
+
+            }
+            else
+            {
+                if (x == 4)
+                {
+                    <input type="button" name="GoMenutButton" class="btn-link" value="Home" onclick="location.href='@Url.Action("Index","Office")'" />
+
+                }
+            }
+        }
+    }
 </p>
