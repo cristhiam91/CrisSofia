@@ -67,7 +67,20 @@ namespace PmTool.UI.Controllers
 
                     var otherProjectToAdd = Mapper.Map<DATA.OtherProjects>(otherProject);
                     oProjec.AddOtherProject(otherProjectToAdd);
-                    return RedirectToAction("CreateOtherProject");
+                    int x = (Int32)Session["UserType"];
+                    switch (x)
+                    {
+                        case 1:
+                            return RedirectToAction("PmProjects", "User");
+                        case 2:
+                            return RedirectToAction("UserMyProjects", "User");
+                        case 3:
+                            return RedirectToAction("Index", "OtherProjects");
+                        case 4:
+                            return RedirectToAction("Index", "OtherProjects");
+                        default:
+                            return RedirectToAction("Index", "Home");
+                    }
                 }
                 catch (Exception ex)
                 {
@@ -98,7 +111,20 @@ namespace PmTool.UI.Controllers
                 }
                 var updateOtherProject = Mapper.Map<DATA.OtherProjects>(other);
                 oProjec.UpdateOtherProject(updateOtherProject);
-                return RedirectToAction("Index", "Home");
+                int x = (Int32)Session["UserType"];
+                switch (x)
+                {
+                    case 1:
+                        return RedirectToAction("PmProjects", "User");
+                    case 2:
+                        return RedirectToAction("UserMyProjects", "User");
+                    case 3:
+                        return RedirectToAction("Index", "OtherProjects");
+                    case 4:
+                        return RedirectToAction("Index", "OtherProjects");
+                    default:
+                        return RedirectToAction("Index", "Home");
+                }
             }
             catch
             {
@@ -108,7 +134,20 @@ namespace PmTool.UI.Controllers
         public ActionResult Delete(int id)
         {
             oProjec.DeleteOtherProject(id);
-            return View();
+            int x = (Int32)Session["UserType"];
+            switch (x)
+            {
+                case 1:
+                    return RedirectToAction("PmProjects", "User");
+                case 2:
+                    return RedirectToAction("UserMyProjects", "User");
+                case 3:
+                    return RedirectToAction("Index", "OtherProjects");
+                case 4:
+                    return RedirectToAction("Index", "OtherProjects");
+                default:
+                    return RedirectToAction("Index", "Home");
+            }
         }
 
         public ActionResult DetailsOtherProject(int id)

@@ -27,7 +27,7 @@ namespace PmTool.DAL {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-580VVCI;Initial Catalog=ProjectManagement;Integrated Security" +
-            "=True")]
+            "=True;Max Pool Size=10024")]
         public string conexion {
             get {
                 return ((string)(this["conexion"]));

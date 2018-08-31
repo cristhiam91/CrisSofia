@@ -92,4 +92,22 @@
         }
 
     </table>
+    <div>
+        <div>
+            @{int x = (Int32)Session["UserType"]; }
+
+            @if (x == 3)
+            {
+                <div>
+                    @Html.ActionLink("Back", "AdminConsole", "User")
+                </div>
+            }
+            else
+            {
+                <div>
+                    @Html.ActionLink("Back", "PmManagerConsole", "User")
+                </div>
+            }
+        </div>
+    </div>
 </div>

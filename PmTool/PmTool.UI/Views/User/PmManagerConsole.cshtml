@@ -25,33 +25,45 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    @Html.ActionLink("PM Tool", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     @Html.ActionLink("My Account", "MyAccount", "User", new { area = "" }, new { @class = "navbar-brand" })
                     @Html.ActionLink("Log Off", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>
             </div>
         </div>
     </div>
-    <div class="container" id="PmManagerMenu">
-            <div>
-                <input type="button" class="btn btn-primary btn-lg" value="Lab project" onclick="location.href='@Url.Action("Index","Lab")'" />
-            </div>
-            <br />
-            <div>
-                <input type="button" class="btn btn-primary btn-lg" value="Data center project" onclick="location.href='@Url.Action("Index","DataCenter")'" />
-            </div>
-            <br />
-            <div>
-                <input type="button" class="btn btn-primary btn-lg" value="Factory project" onclick="location.href='@Url.Action("Index","Factory")'" />
-            </div>
-            <br />
-            <div>
-                <input type="button" class="btn btn-primary btn-lg" value="Office project" onclick="location.href='@Url.Action("Index","Office")'" />
-            </div>
-            <br />
-            <div>
-                <input type="button" class="btn btn-primary btn-lg" value="Other project" onclick="location.href='@Url.Action("Index","OtherProject")'" />
-            </div>
+    <div class="container">
+        <div class="btn-group" id="consoleMenuProjects">
+            <input type="button" class="btn btn-primary btn-lg" value="Lab project" onclick="location.href='@Url.Action("Index","Lab")'" />
+            <input type="button" class="btn btn-primary btn-lg" value="Data center project" onclick="location.href='@Url.Action("Index","DataCenter")'" />
+            <input type="button" class="btn btn-primary btn-lg" value="Factory project" onclick="location.href='@Url.Action("Index","Factory")'" />
+            <input type="button" class="btn btn-primary btn-lg" value="Office project" onclick="location.href='@Url.Action("Index","Office")'" />
+            <input type="button" class="btn btn-primary btn-lg" value="Other project" onclick="location.href='@Url.Action("Index","OtherProject")'" />  <br />   <br />   <br />
+            <input type="button" class="btn btn-primary btn-lg" value="Lab Chart" onclick="location.href='@Url.Action("LabsData","Lab")'" />
+            <input type="button" class="btn btn-primary btn-lg" value="Data center Chart" onclick="location.href='@Url.Action("DataCentersData","DataCenter")'" />
+            <input type="button" class="btn btn-primary btn-lg" value="Factory Chart" onclick="location.href='@Url.Action("FactoryData","Factory")'" />
+            <input type="button" class="btn btn-primary btn-lg" value="Office Chart" onclick="location.href='@Url.Action("OfficeData","Office")'" />
+        </div>
     </div>
+    @*<div class="container" id="PmManagerMenu">
+        <div>
+            <input type="button" class="btn btn-primary btn-lg" value="Lab project" onclick="location.href='@Url.Action("Index","Lab")'" />
+        </div>
+        <br />
+        <div>
+            <input type="button" class="btn btn-primary btn-lg" value="Data center project" onclick="location.href='@Url.Action("Index","DataCenter")'" />
+        </div>
+        <br />
+        <div>
+            <input type="button" class="btn btn-primary btn-lg" value="Factory project" onclick="location.href='@Url.Action("Index","Factory")'" />
+        </div>
+        <br />
+        <div>
+            <input type="button" class="btn btn-primary btn-lg" value="Office project" onclick="location.href='@Url.Action("Index","Office")'" />
+        </div>
+        <br />
+        <div>
+            <input type="button" class="btn btn-primary btn-lg" value="Other project" onclick="location.href='@Url.Action("Index","OtherProject")'" />
+        </div>
+    </div>*@
 </body>
 </html>

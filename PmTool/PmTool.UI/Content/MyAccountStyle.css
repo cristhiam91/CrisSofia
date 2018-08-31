@@ -9,3 +9,7 @@
 #CuadrosTxt {
     width: 200px;
 }
+
+#hideUserType {
+    visibility: hidden;
+}

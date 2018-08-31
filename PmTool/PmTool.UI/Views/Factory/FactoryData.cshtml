@@ -27,7 +27,6 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    @Html.ActionLink("PM Tool", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                     @Html.ActionLink("My Account", "MyAccount", "User", new { area = "" }, new { @class = "navbar-brand" })
                     @Html.ActionLink("Log Off", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>
@@ -45,10 +44,10 @@
 
                 type: 'bar',
                 data: {
-                    labels: butgets,
+                    labels: repArray,
                     datasets: [{
                         label: "Project Cost",
-                        data: repArray,
+                        data: butgets,
                         backgroundColor: [
                             'rgba(255, 99, 132, 0.2)',
                             'rgba(54, 162, 235, 0.2)',
@@ -104,22 +103,22 @@
 
             </script>
         </div>
-    </div>
-    <div>
-        @{int x = (Int32)Session["UserType"]; }
+        <div>
+            @{int x = (Int32)Session["UserType"]; }
 
-        @if (x == 3)
-        {
-            <div>
-                @Html.ActionLink("Back", "AdminConsole", "User")
-            </div>
-        }
-        else
-        {
-            <div>
-                @Html.ActionLink("Back", "PmManagerConsole", "User")
-            </div>
-        }
+            @if (x == 3)
+            {
+                <div>
+                    @Html.ActionLink("Back", "AdminConsole", "User")
+                </div>
+            }
+            else
+            {
+                <div>
+                    @Html.ActionLink("Back", "PmManagerConsole", "User")
+                </div>
+            }
+        </div>
     </div>
 </body>
 </html>
